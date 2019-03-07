@@ -1,8 +1,9 @@
 char = prompt('¿Que caracter quieres?','*')
 while (char.length !== 1) {
-  char = prompt('Introduce un solo caracter','*')
+  char = prompt('¿Que caracter quieres?','*')
 }
 
+alert('Elegiste el caracter' + ' '+char)
 minimo = 0;
 maximo = 0;
 
