@@ -27,7 +27,11 @@
 
 .pc-choice{
   grid-area: pc-choice;
-  height: 100px;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  grid-gap: 30px;
 }
 
 .user-choice{
@@ -37,6 +41,7 @@
   grid-template-columns: 1fr;
   justify-items: center;
   grid-gap: 30px;
+  border-right: 1px solid black;
 }
 
 img{
