@@ -45,7 +45,7 @@ switch (global_option) {
     break;
 
   default:
-    console.log("Hola!");
+    console.log("El global_option es: "+ global_option);
 }
 
 
