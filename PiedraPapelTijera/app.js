@@ -17,27 +17,36 @@ piedra.addEventListener("click", escogistePiedra);
 tijera.addEventListener("click", escogisteTijera);
 
 function escogistePapel(){
-  console.log("Escogiste papel");
   var option= 3;
   global_option = option;
-  console.log(option);
 }
 
 function escogistePiedra(){
-  console.log("Escogiste Piedra");
   var option = 1;
   global_option = option;
-  console.log(option);
 }
 
 function escogisteTijera(){
-  console.log("Escogiste Tijera");
   var option = 2;
   global_option = option;
-  console.log(option);
 }
 
-console.log(global_option);
+switch (global_option) {
+  case 1:
+    console.log("Escogiste Piedra");
+    break;
+
+  case 2:
+    console.log("Escogiste Tijera");
+    break;
+
+  case 3:
+    console.log("Escogiste Papel");
+    break;
+
+  default:
+    console.log("Hola!");
+}
 
 
 
@@ -53,31 +62,31 @@ console.log(global_option);
 
       var numero = Math.floor(Math.random()*(maximo-minimo +1)+ minimo);
 
-      if (numero == option) {
+      if (numero == global_option) {
         alert('Es un empate')
       }
 
-      else if (numero == 1 && option == 2){
+      else if (numero == 1 && global_option == 2){
         alert('Ganaste');
         contador1++;
       }
-      else if (numero == 1 && option == 3){
+      else if (numero == 1 && global_option == 3){
         alert('Perdiste');
         contador2++;
       }
-      else if (numero == 2 && option == 3){
+      else if (numero == 2 && global_option == 3){
         alert('Ganaste');
         contador1++;
       }
-      else if (numero == 2 && option == 1){
+      else if (numero == 2 && global_option == 1){
         alert('Perdiste');
         contador2++;
       }
-      else if(numero == 3 && option == 2){
+      else if(numero == 3 && global_option == 2){
         alert('Perdiste');
         contador2++;
       }
-      else if (numero == 3 && option == 1){
+      else if (numero == 3 && global_option == 1){
         alert('Ganaste');
         contador1++;
       }
