@@ -11,7 +11,9 @@
   grid-template-areas: "title title"
                        "description description"
                        "user-choice pc-choice"
-                       "user-score pc-score";
+                       "user-score pc-score"
+                       "result result"
+                       "message-container message-container";
   text-align: center;
 }
 
@@ -80,6 +82,19 @@
   margin-left: auto;
 }
 
+.result{
+  grid-area: result;
+  background: lightblue;
+  width: 50%;
+  justify-self: center;
+}
+
+.menssage-container{
+  grid-area: message-container;
+  background: lightblue;
+  width: 50%;
+  justify-self: center;
+}
 
 img{
   width: 50px;
