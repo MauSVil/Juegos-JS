@@ -1,3 +1,7 @@
+body{
+  background: #c1d2d0;
+}
+
 .center{
   display: flex;
   justify-content: center;
@@ -6,6 +10,7 @@
 
 .container{
   display: grid;
+  background: transparent;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
   grid-template-areas: "title title"

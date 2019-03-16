@@ -28,8 +28,9 @@ tijera.addEventListener("click", escogisteTijera);
 function escogistePapel(){
   var option= 3;
   num = random(1,3)
-  setTimeout(cambiarImagen,2000)
-  comprobacion(num, option); //Ayuda
+  setTimeout(cambiarImagen,1000)
+  setTimeout( function () { comprobacion ( num, option ); }, 1500 )
+  // comprobacion(num, option);
   userScore.innerHTML = contador1;
   pcScore.innerHTML = contador2;
   // final();
@@ -39,8 +40,8 @@ function escogistePapel(){
 function escogistePiedra(){
   var option = 1;
   num = random(1,3);
-  setTimeout(cambiarImagen,2000)
-  comprobacion(num, 1);
+  setTimeout(cambiarImagen,1000)
+  setTimeout( function () { comprobacion ( num, option ); }, 1500 )
   userScore.innerHTML = contador1;
   pcScore.innerHTML = contador2;
   // final();
@@ -50,8 +51,8 @@ function escogistePiedra(){
 function escogisteTijera(){
   var option = 2;
   num = random(1,3)
-  setTimeout(cambiarImagen,2000)
-  comprobacion(num,2);
+  setTimeout(cambiarImagen,1000)
+  setTimeout( function () { comprobacion ( num, option ); }, 1500 )
   userScore.innerHTML = contador1;
   pcScore.innerHTML = contador2;
   // final();
