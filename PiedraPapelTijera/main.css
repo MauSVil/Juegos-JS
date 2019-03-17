@@ -1,108 +1,82 @@
 body{
-  background: #c1d2d0;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik";
 }
 
-.center{
+header{
+  height: 7vh;
+  background: lightgray;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+}
+
+header a{
+  color: #463f3f;
+  margin-right: 20px;
 }
 
 .container{
   display: grid;
-  background: transparent;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
   grid-template-areas: "title title"
-                       "description description"
-                       "user-choice pc-choice"
-                       "user-score pc-score"
-                       "result result"
-                       "message-container message-container";
+                       "images images"
+                       "usr pc";
   text-align: center;
+  grid-gap: 30px;
+  justify-content: center;
+  align-content: center;
+  height: 93vh;
 }
 
 .title{
   grid-area: title;
-  font-size: 40px;
 }
 
-.description{
-  grid-area: description;
-  height: 100px;
-  font-size: 20px;
-}
-
-.pc-choice{
-  grid-area: pc-choice;
-  height: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  grid-gap: 30px;
-  border-left: 1px solid black;
-}
-
-.user-choice{
-  grid-area: user-choice;
-  height: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  grid-gap: 30px;
-  border-right: 1px solid black;
-}
-
-.user-score{
-  grid-area: user-score;
-}
-
-.pc-score{
-  grid-area: pc-score;
-}
-
-.user-score-container p{
-  height: 50px;
-  text-align: right;
-  padding-top: 20px;
-}
-
-.pc-score-container p{
-  height: 50px;
-  text-align: left;
-  padding-top: 20px;
-}
-
-.user-score-container,
-.pc-score-container{
-  width: 40%;
+.images{
+  grid-area: images;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 20px;
-  background: #ab9666;
+  align-items: center;
+
 }
 
-.user-score-container{
-  margin-left: auto;
+.btn-pc{
+  grid-area: usr;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.result{
-  grid-area: result;
-  background: lightblue;
-  width: 50%;
-  justify-self: center;
+.btn-usr{
+  grid-area: pc;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.menssage-container{
-  grid-area: message-container;
-  background: lightblue;
-  width: 50%;
-  justify-self: center;
+
+.btn-pc button{
+  /* justify-content: end; */
 }
 
-img{
-  width: 50px;
+
+button{
+  border-radius: 10px;
+  width: 200px;
   height: 50px;
-  cursor: pointer;
+}
+
+button:hover{
+  background: #AEC949;
+  color: white;
+}
+
+h1{
+  font-size: 60px;
+  margin:0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
 }
