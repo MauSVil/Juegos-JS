@@ -1,4 +1,3 @@
-
 var contador1 = 0;
 var contador2 = 0;
 var contador3 = 0;
@@ -21,53 +20,39 @@ var message = document.getElementById('message')
 var piedrapc = document.getElementById('piedrapc')
 var papelpc = document.getElementById('papelpc')
 var tijerapc = document.getElementById('tijerapc')
+var game = document.getElementById('game')
+var instructions = document.getElementById('instructions')
 
 papel.addEventListener("click", escogistePapel);
 piedra.addEventListener("click", escogistePiedra);
 tijera.addEventListener("click", escogisteTijera);
 
-
-
 function escogistePapel(){
   var option= 3;
-  num = random(1,3)
-  // setTimeout(cambiarImagen,1000)
-  // setTimeout( function () { comprobacion ( num, option ); }, 1500 )
-  resaltarImagen(option)
-  cambiarImagen();
-  comprobacion(num, option);
+  // comprobacion(num, option);
   userScore.innerHTML = contador1;
   pcScore.innerHTML = contador2;
-  // final();
   mensaje();
 }
 
 function escogistePiedra(){
   var option = 1;
-  num = random(1,3);
-  // setTimeout(cambiarImagen,1000)
-  // setTimeout( function () { comprobacion ( num, option ); }, 1500 )
-  resaltarImagen(option)
-  cambiarImagen();
-  comprobacion(num, option);
+  // comprobacion(num, option);
   userScore.innerHTML = contador1;
   pcScore.innerHTML = contador2;
-  // final();
   mensaje();
 }
 
 function escogisteTijera(){
   var option = 2;
-  num = random(1,3)
-  // setTimeout(cambiarImagen,1000)
-  // setTimeout( function () { comprobacion ( num, option ); }, 1500 )
-  resaltarImagen(option)
-  cambiarImagen();
-  comprobacion(num, option);
+  // comprobacion(num, option);
   userScore.innerHTML = contador1;
   pcScore.innerHTML = contador2;
-  // final();
   mensaje();
+}
+
+function hideContent(){
+  game.style.display = "none"
 }
 
 function random(minimo, maximo){
@@ -123,22 +108,6 @@ function comprobacion(global_option, numero){
     console.log("Ganaste");
     finalcontainer.style.background = "#00800061";
     contador3++;
-  }
-}
-
-
-//En proceso
-function final(){
-  if(contador2 == 2){
-    alert('Perdiste 2 de 3');
-    contador1=0;
-    contador2=0;
-  }
-
-  else if(contador1 == 2){
-    alert('Ganaste 2 de 3');
-    contador1=0;
-    contador2=0;
   }
 }
 
@@ -198,52 +167,5 @@ function randomNegativeMessage(){
       messagecontainer.innerHTML = "<p id='final'>Necesitas ayuda?</p>"
       break;
     default:
-  }
-}
-
-function cambiarImagen(){
-  switch (num) {
-    case 1:
-      piedrapc.style.opacity = "1";
-      papelpc.style.opacity = "0.5";
-      tijerapc.style.opacity = "0.5";
-      console.log("PC: Piedra");
-      break;
-    case 2:
-      piedrapc.style.opacity = "0.5";
-      papelpc.style.opacity = "0.5";
-      tijerapc.style.opacity = "1";
-      console.log("PC: Tijeras");
-      break;
-    case 3:
-      piedrapc.style.opacity = "0.5";
-      papelpc.style.opacity = "1";
-      tijerapc.style.opacity = "0.5";
-      console.log("PC: Papel");
-      break;
-    default:
-
-  }
-}
-
-function resaltarImagen(option){
-  switch (option) {
-    case 1:
-      piedra.style.opacity = "1";
-      papel.style.opacity = "0.5";
-      tijera.style.opacity = "0.5";
-      break;
-    case 2:
-      piedra.style.opacity = "0.5";
-      papel.style.opacity = "0.5";
-      tijera.style.opacity = "1";
-      break;
-    case 3:
-      piedra.style.opacity = "0.5";
-      papel.style.opacity = "1";
-      tijera.style.opacity = "0.5";
-      break;
-    default:
-
   }
 }
