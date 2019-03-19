@@ -7,8 +7,6 @@ var option;
 var resultado;
 var min=0;
 
-
-
 var papel= document.getElementById('papel')
 var piedra = document.getElementById('piedra')
 var tijera = document.getElementById('tijera')
@@ -23,11 +21,11 @@ var papelpc = document.getElementById('papelpc')
 var tijerapc = document.getElementById('tijerapc')
 var game = document.getElementById('game')
 var instructions = document.getElementById('instructions')
+var header = document.getElementById('header')
 
 papel.addEventListener("click", escogistePapel);
 piedra.addEventListener("click", escogistePiedra);
 tijera.addEventListener("click", escogisteTijera);
-
 
 function init(){
   game.style.display = "none"
@@ -42,6 +40,7 @@ function countDown(){
   window.setInterval(function(){
     contador.innerHTML = n;
     n--;
+    console.log(n);
   },1000);
 }
 
@@ -51,7 +50,6 @@ function show(){
   instructions.style.display = "none";
 
 }
-
 
 function escogistePapel(){
   var option= 3;
