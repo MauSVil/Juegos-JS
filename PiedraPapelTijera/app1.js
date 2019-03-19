@@ -21,6 +21,9 @@ var papelusr = document.getElementById('papelpc')
 var tijerausr = document.getElementById('tijerapc')
 var game = document.getElementById('game')
 var instructions = document.getElementById('instructions')
+var usr1 = document.getElementById('usr1choice')
+var usr2 = document.getElementById('usr2choice')
+var header = document.getElementById('header')
 
 papel.addEventListener("click", escogistePapel);
 piedra.addEventListener("click", escogistePiedra);
@@ -31,23 +34,51 @@ piedrausr.addEventListener("click", escogistePiedraUsr);
 tijerausr.addEventListener("click", escogisteTijeraUsr);
 
 
+function init(){
+  game.style.display = "none"
+  header.style.display = "none"
+  countDown()
+  setTimeout(show,4000)
+}
+
+function countDown(){
+  var n = 3;
+  var contador = document.getElementById('contador')
+  window.setInterval(function(){
+    contador.innerHTML = n;
+    n--;
+  },1000);
+}
+
+function show(){
+  game.style.display = "block";
+  header.style.display = "flex";
+  instructions.style.display = "none";
+
+}
+
+
 function escogistePapel(){
   option= 3;
   console.log("Escogio Usuario1");
+  changeImageUsr1(option)
 }
 
 function escogistePiedra(){
   option = 1;
   console.log("Escogio Usuario1");
+  changeImageUsr1(option)
 }
 
 function escogisteTijera(){
   option = 2;
   console.log("Escogio Usuario1");
+  changeImageUsr1(option)
 }
 
 function escogistePapelUsr(){
   optionusr= 3;
+  changeImageUsr2(optionusr);
   comprobacion(optionusr, option);
   user1Score.innerHTML = contador1;
   user2Score.innerHTML = contador2;
@@ -56,6 +87,7 @@ function escogistePapelUsr(){
 
 function escogistePiedraUsr(){
   optionusr = 1;
+  changeImageUsr2(optionusr);
   comprobacion(optionusr, option);
   user1Score.innerHTML = contador1;
   user2Score.innerHTML = contador2;
@@ -64,10 +96,41 @@ function escogistePiedraUsr(){
 
 function escogisteTijeraUsr(){
   optionusr = 2;
+  changeImageUsr2(optionusr);
   comprobacion(optionusr, option);
   user1Score.innerHTML = contador1;
   user2Score.innerHTML = contador2;
   mensaje();
+}
+
+function changeImageUsr1(option){
+  switch (option) {
+    case 1:
+      usr1.innerHTML = "<img src='assets/piedra.png' alt='' id='piedrapc'>"
+      break;
+    case 2:
+      usr1.innerHTML = "<img src='assets/tijeras.png' alt='' id='piedrapc'>"
+      break;
+    case 3:
+      usr1.innerHTML = "<img src='assets/papel.png' alt='' id='piedrapc'>"
+      break;
+    default:
+  }
+}
+
+function changeImageUsr2(option){
+  switch (option) {
+    case 1:
+      usr2.innerHTML = "<img src='assets/piedra.png' alt='' id='piedrapc'>"
+      break;
+    case 2:
+      usr2.innerHTML = "<img src='assets/tijeras.png' alt='' id='piedrapc'>"
+      break;
+    case 3:
+      usr2.innerHTML = "<img src='assets/papel.png' alt='' id='piedrapc'>"
+      break;
+    default:
+  }
 }
 
 
