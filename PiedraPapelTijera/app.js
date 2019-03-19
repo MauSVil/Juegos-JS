@@ -21,11 +21,36 @@ var message = document.getElementById('message')
 var piedrapc = document.getElementById('piedrapc')
 var papelpc = document.getElementById('papelpc')
 var tijerapc = document.getElementById('tijerapc')
+var game = document.getElementById('game')
+var instructions = document.getElementById('instructions')
 
 papel.addEventListener("click", escogistePapel);
 piedra.addEventListener("click", escogistePiedra);
 tijera.addEventListener("click", escogisteTijera);
 
+
+function init(){
+  game.style.display = "none"
+  header.style.display = "none"
+  countDown()
+  setTimeout(show,4000)
+}
+
+function countDown(){
+  var n = 3;
+  var contador = document.getElementById('contador')
+  window.setInterval(function(){
+    contador.innerHTML = n;
+    n--;
+  },1000);
+}
+
+function show(){
+  game.style.display = "block";
+  header.style.display = "flex";
+  instructions.style.display = "none";
+
+}
 
 
 function escogistePapel(){

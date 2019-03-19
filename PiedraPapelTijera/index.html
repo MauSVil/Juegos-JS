@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="index.css">
   <title>Document</title>
 </head>
-<body>
+<body onload="init()">
   <header>
     <a href="main.html">Home</a>
   </header>
-  <section class="center">
+  <section class="center" id="game">
     <div class="container">
       <div class="title">
         <h1>Estas jugando contra la PC</h1>
@@ -45,6 +45,9 @@
       <div class="message-container" id="message-container">
       </div>
     </div>
+  </section>
+  <section class="instructions" id="instructions">
+    <h2 id="contador">Empezara en: </h2>
   </section>
 
   <script src="app.js" charset="utf-8"></script>
