@@ -1,25 +1,24 @@
 var contador1 = 0;
 var contador2 = 0;
 var contador3 = 0;
-// var global_option;
-var option;
+
+var option = 0;
+var optionusr= 0;
 var resultado;
 var min=0;
-
-
 
 var papel= document.getElementById('papel')
 var piedra = document.getElementById('piedra')
 var tijera = document.getElementById('tijera')
-var userScore = document.getElementById('user-score')
-var pcScore = document.getElementById('pc-score')
+var user1Score = document.getElementById('user-score')
+var user2Score = document.getElementById('pc-score')
 var final = document.getElementById('final')
 var finalcontainer=document.getElementById('final-container')
 var messagecontainer = document.getElementById('message-container')
 var message = document.getElementById('message')
-var piedrapc = document.getElementById('piedrapc')
-var papelpc = document.getElementById('papelpc')
-var tijerapc = document.getElementById('tijerapc')
+var piedrausr = document.getElementById('piedrapc')
+var papelusr = document.getElementById('papelpc')
+var tijerausr = document.getElementById('tijerapc')
 var game = document.getElementById('game')
 var instructions = document.getElementById('instructions')
 
@@ -27,33 +26,50 @@ papel.addEventListener("click", escogistePapel);
 piedra.addEventListener("click", escogistePiedra);
 tijera.addEventListener("click", escogisteTijera);
 
+papelusr.addEventListener("click", escogistePapelUsr);
+piedrausr.addEventListener("click", escogistePiedraUsr);
+tijerausr.addEventListener("click", escogisteTijeraUsr);
+
+
 function escogistePapel(){
-  var option= 3;
-  // comprobacion(num, option);
-  userScore.innerHTML = contador1;
-  pcScore.innerHTML = contador2;
-  mensaje();
+  option= 3;
+  console.log("Escogio Usuario1");
 }
 
 function escogistePiedra(){
-  var option = 1;
-  // comprobacion(num, option);
-  userScore.innerHTML = contador1;
-  pcScore.innerHTML = contador2;
-  mensaje();
+  option = 1;
+  console.log("Escogio Usuario1");
 }
 
 function escogisteTijera(){
-  var option = 2;
-  // comprobacion(num, option);
-  userScore.innerHTML = contador1;
-  pcScore.innerHTML = contador2;
+  option = 2;
+  console.log("Escogio Usuario1");
+}
+
+function escogistePapelUsr(){
+  optionusr= 3;
+  comprobacion(optionusr, option);
+  user1Score.innerHTML = contador1;
+  user2Score.innerHTML = contador2;
   mensaje();
 }
 
-function hideContent(){
-  game.style.display = "none"
+function escogistePiedraUsr(){
+  optionusr = 1;
+  comprobacion(optionusr, option);
+  user1Score.innerHTML = contador1;
+  user2Score.innerHTML = contador2;
+  mensaje();
 }
+
+function escogisteTijeraUsr(){
+  optionusr = 2;
+  comprobacion(optionusr, option);
+  user1Score.innerHTML = contador1;
+  user2Score.innerHTML = contador2;
+  mensaje();
+}
+
 
 function random(minimo, maximo){
   return Math.floor(Math.random()*(maximo-minimo +1)+ minimo);
